@@ -1,0 +1,58 @@
+{
+  "seller": [
+    {
+      "name": "Azhar Ahsan",
+      "email": "azhar@seller.com",
+      "password": "abc@123",
+      "id": 1
+    },
+    {
+      "name": "Bilal",
+      "email": "Bilal@seller.com",
+      "password": "abc@123",
+      "id": 2
+    },
+    {
+      "name": "",
+      "password": "",
+      "email": "",
+      "id": 3
+    },
+    {
+      "name": "qasim",
+      "password": "abc@123",
+      "email": "qasim@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "saif",
+      "password": "abc@123",
+      "email": "saif@seller.com",
+      "id": 5
+    },
+    {
+      "name": "mazhar",
+      "password": "abc@123",
+      "email": "mazhar@seller.com",
+      "id": 6
+    },
+    {
+      "name": "Ibrahim",
+      "password": "abc@123",
+      "email": "ibrahim@seller.com",
+      "id": 7
+    },
+    {
+      "name": "mariam",
+      "password": "abc@123",
+      "email": "mariam@test.com",
+      "id": 8
+    },
+    {
+      "name": "aleeza",
+      "password": "abc@123",
+      "email": "aleeza@test.com",
+      "id": 9
+    }
+  ]
+}
