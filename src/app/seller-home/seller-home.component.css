@@ -1,0 +1,51 @@
+
+
+.product-list {
+    text-align: center;
+}
+
+.product-list h1 {
+    margin-bottom: 20px;
+}
+
+table {
+    text-align: left;
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: blueviolet;
+    color: white;
+    border-color: blueviolet;
+    padding: 10px;
+}
+
+table td {
+    border-bottom: 1px solid #ccc;
+}
+
+table td {
+    color: black;
+    padding: 10px;
+}
+
+table td img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.delete-btn {
+    padding: 10px 15px;
+    color: white;
+    background: red;
+    border: 0px;
+    cursor: pointer;
+}
+
+
+
+
+
+

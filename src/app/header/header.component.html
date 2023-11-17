@@ -1,25 +1,41 @@
 
 <header>
     <div class="logo">
-        <h1>E-COMM</h1>
+        <h1>
+            <a routerLink="/">E-COMM</a>
+        </h1>
     </div>
-    <div class="search-main">
+    <div *ngIf="menuType==='default'" class="search-main">
         <input type="text" placeholder="please search here...">
         <button class="btn-search">Search</button>
     </div>
-    <div class="main-menu">
-        <ul>
+    <div [ngSwitch]="menuType" class="main-menu">
+        <ul *ngSwitchCase="'default'">
             <li>
                 <a routerLink="/">Home</a>
             </li>
             <li>
-                <a routerLink="/seller-auth" >Seller</a>
+                <a routerLink="seller-auth" >Seller</a>
             </li>
             <li>
-                <a href="#">Login</a>
+                <a>Login</a>
             </li>
             <li>
-                <a href="#">Cart(0)</a>
+                <a>Cart(0)</a>
+            </li>
+        </ul>
+        <ul *ngSwitchCase="'seller'">
+            <li>
+                <a routerLink="seller-home">Product List</a>
+            </li>
+            <li>
+                <a routerLink="seller-add-product">Add Product</a>
+            </li>
+            <li>
+                <a (click)="logout()">Logout</a>
+            </li>
+            <li>
+                <a>{{ sellerName | titlecase }}</a>
             </li>
         </ul>
     </div>

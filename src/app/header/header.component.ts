@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+  menuType: string = 'default'
+
+  sellerName: string = ''
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.router.events.subscribe((val:any)=>{
+      if(val.url){
+        if(localStorage.getItem('seller') && val.url.includes('seller')){
+          // console.warn('In seller area')
+          this.menuType='seller'
+          if(localStorage.getItem('seller')){
+            let sellerStore = localStorage.getItem('seller')
+            let sellerData = sellerStore && JSON.parse(sellerStore)[0]
+            this.sellerName = sellerData.name
+          }
+        } else {
+          // console.warn('outside Seller area')
+          this.menuType='default'
+        }
+      }
+    })
+  }
+
+  logout(){
+    localStorage.removeItem('seller')
+    this.router.navigate(['/'])
+  }
 
 }
