@@ -95,16 +95,22 @@
       "password": "abc@123",
       "email": "qasim@seller.com",
       "id": 16
+    },
+    {
+      "name": "ali",
+      "password": "abc@123",
+      "email": "ali@seller.com",
+      "id": 17
     }
   ],
   "products": [
     {
-      "name": "Iphone 14",
+      "name": "Iphone 16",
       "price": "400000",
+      "color": "silver",
       "category": "Mobile",
-      "color": "black",
-      "image": "https://i0.wp.com/mobileguru.pk/wp-content/uploads/2023/08/apple-iphone-14-pro-max.jpg?fit=1200%2C1200&ssl=1",
       "description": "This is Amazing product.",
+      "image": "https://i0.wp.com/mobileguru.pk/wp-content/uploads/2023/08/apple-iphone-14-pro-max.jpg?fit=1200%2C1200&ssl=1",
       "id": 1
     },
     {
@@ -133,24 +139,6 @@
       "description": "This is Amazing product ",
       "image": "https://i0.wp.com/mobileguru.pk/wp-content/uploads/2023/08/apple-iphone-14-pro-max.jpg?fit=1200%2C1200&ssl=1",
       "id": 4
-    },
-    {
-      "name": "Iphone 14",
-      "price": "400000",
-      "category": "Mobile",
-      "color": "black",
-      "image": "https://i0.wp.com/mobileguru.pk/wp-content/uploads/2023/08/apple-iphone-14-pro-max.jpg?fit=1200%2C1200&ssl=1",
-      "description": "This is Amazing product.",
-      "id": 5
-    },
-    {
-      "name": "IPhone 13",
-      "price": "350000",
-      "color": "blue",
-      "category": "Mobile",
-      "description": "This is Amazing product ",
-      "image": "https://i0.wp.com/mobileguru.pk/wp-content/uploads/2023/08/apple-iphone-14-pro-max.jpg?fit=1200%2C1200&ssl=1",
-      "id": 6
     }
   ]
 }

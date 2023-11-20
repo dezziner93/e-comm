@@ -44,6 +44,17 @@ table td img {
     cursor: pointer;
 }
 
+.delete-btn-i {
+    color: red;
+    cursor: pointer;
+}
+
+.edit-btn-i {
+    color: blue;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
 
 
 
