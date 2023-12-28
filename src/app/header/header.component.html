@@ -6,8 +6,13 @@
         </h1>
     </div>
     <div *ngIf="menuType==='default'" class="search-main">
-        <input type="text" placeholder="please search here...">
-        <button class="btn-search">Search</button>
+        <input type="text" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="please search here...">
+        <button (click)="submitSearch(searchInput.value)" class="btn-search">Search</button>
+        <ul class="suggested-result" *ngIf="searchResult">
+            <li *ngFor="let item of searchResult">
+                <a (mousedown)="redirectToDetails(item.id)">{{item.name}}</a>
+            </li>
+        </ul>
     </div>
     <div [ngSwitch]="menuType" class="main-menu">
         <ul *ngSwitchCase="'default'">
@@ -18,10 +23,30 @@
                 <a routerLink="seller-auth" >Seller</a>
             </li>
             <li>
-                <a>Login</a>
+                <a routerLink="user-auth">Login/Sign up</a>
             </li>
             <li>
-                <a>Cart(0)</a>
+                <a>Cart({{cartItem}})</a>
+            </li>
+        </ul>
+        <ul *ngSwitchCase="'user'">
+            <li>
+                <a routerLink="/">Home</a>
+            </li>
+            <li>
+                <a routerLink="seller-auth" >Seller</a>
+            </li>
+            <li>
+                <a routerLink="user-auth">{{userName | titlecase}}</a>
+            </li>
+            <li>
+                <a (click)="userLogout()">Logout</a>
+            </li>
+            <li>
+                <a routerLink="my-orders">My Orders</a>
+            </li>
+            <li>
+                <a routerLink="cart-page">Cart({{cartItem}})</a>
             </li>
         </ul>
         <ul *ngSwitchCase="'seller'">

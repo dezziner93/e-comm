@@ -1,0 +1,45 @@
+
+<h1 class="mb-5">Orders</h1>
+<div class="container-fluid">
+  <div class="row align-items-start">
+    <div class="col-12 col-sm-12 items">
+      <!--1-->
+      <div class="cartItem row align-items-start mb-3">
+        <div class="col-2">
+            <h6 class="">Orders</h6>
+        </div>
+        <div class="col-2">
+          <h6 class="">Orders Id</h6>
+        </div>
+        <div class="col-2">
+            <h6 class="">Price</h6>
+        </div>
+        <div class="col-4">
+            <h6 class="">Status</h6>
+        </div>
+        <div class="col-2">
+            <h6 class="">Action</h6>
+          </div>
+      </div>
+      <hr>
+      <div *ngFor="let order of orderData" class="cartItem row align-items-start mb-2">
+        <div class="col-2">
+          <img class="w-100" src="" alt="art image">
+        </div>
+        <div class="col-2">
+          <h6 class="">#{{order.id}}</h6>
+        </div>
+        <div class="col-2">
+            <h6 class="">{{order.totalPrice}}</h6>
+        </div>
+        <div class="col-4">
+          <p id="cartItem1Price">In progress</p>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-danger" (click)="cancelOrder(order.id)">Cancel Order</button>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>

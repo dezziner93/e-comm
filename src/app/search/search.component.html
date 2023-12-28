@@ -1,0 +1,26 @@
+<div class="container">
+
+    <div class="card bg-light-subtle mt-4" *ngFor="let item of searchResult">
+        <img src="{{item.image}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <div class="text-section">
+          <h5 class="card-title fw-bold">
+            <a routerLink="/details/{{item.id}}">
+                {{item.name}}
+            </a>
+          </h5>
+          <p class="card-text">{{item.description}}</p>
+          <p class="card-text">{{item.category}}</p>
+          <p class="card-text">{{item.color}}</p>
+        </div>
+        <div class="cta-section">
+          <div>{{item.price}}</div>
+          <a href="#" class="btn btn-dark">Buy Now</a>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  

@@ -1,0 +1,49 @@
+<div class="container my-5">
+
+    <div class="card details-card p-0">
+        <div class="row" *ngIf="productData">
+
+            <div class="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
+                <img class="img-fluid details-img" src="{{productData.image}}" alt="">
+            </div>
+            <div class="col-md-6 col-sm-12 description-container p-5">
+                <div class="main-description">
+                    <p class="product-category mb-0">{{productData.category}}</p>
+                    <h3>{{productData.name}}</h3>
+                    <hr>
+                    <p class="product-price">${{productData.price}}</p>
+                    <form class="add-inputs" method="post">
+                        <div class="d-flex mb-3">
+                            <button class="quantity-min" (click)="handleQuantity('min')">-</button>
+                            <input class="form-control mx-0 mb-0" value="{{productQuantity}}">
+                            <button class="quantity-plus" (click)="handleQuantity('plus')">+</button>
+                        </div>
+                        <button *ngIf="!removeCart" name="add_to_cart" type="submit" (click)="AddToCart()" class="btn btn-primary btn-theme-1 btn-lg">Add to cart</button>
+                        <button *ngIf="removeCart" name="add_to_cart" type="submit" (click)="removeToCart(productData.id)" class="btn btn-primary btn-theme-1 btn-lg">Remove to cart</button>
+                    </form>
+                  
+                    <div style="clear:both"></div>
+
+                    <hr>
+
+                    <p class="product-title mt-4 mb-1">Color: 
+                        <span class="product-color" [style.backgroundColor]="productData.color"></span>    
+                    </p>
+
+                    
+
+                    <p class="product-title mt-4 mb-1">About this product</p>
+                    <p class="product-description mb-4">
+                        {{productData.description}}
+                    </p>
+
+                    <hr>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>

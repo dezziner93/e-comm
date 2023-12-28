@@ -26,10 +26,8 @@ header {
     background: blueviolet;
     color: white;
     font-size: 16px;
-    padding: 8px;
+    padding: 9px;
     border-color: blueviolet;
-    position: relative;
-    top: 1px;
 }
 
 .main-menu ul {
@@ -44,5 +42,23 @@ header {
 
 .main-menu ul li a {
     color: blueviolet;
+    text-decoration: none;
+}
+
+.suggested-result {
+    padding: 20px;
+    list-style: none;
+    background: white;
+    border: 1px solid #ddd;
+    display: list-item;
+}
+
+.suggested-result li {
+    margin-bottom: 5px;
+}
+
+.suggested-result li a {
+    color: blueviolet;
+    cursor: pointer;
     text-decoration: none;
 }

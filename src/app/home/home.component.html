@@ -1,24 +1,49 @@
+<carousel *ngIf="popularProducts">
+  <slide *ngFor="let item of popularProducts">
+    <a routerLink="/details/{{item.id}}">
+      <img class="product-slider-img" src="{{ item.image }}" alt="first slide" style="display: block; width: 100%;">
+    </a>
+    <div class="carousel-caption d-none d-md-block">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+  </slide>
+</carousel>
 
-  <carousel>
-    <slide>
-      <img src="../../assets/images/6.jpeg" alt="first slide" style="display: block; width: 100%;">
-      <div class="carousel-caption d-none d-md-block">
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+<div class="container-fluid cont-box bg-trasparent my-4 p-3" style="position: relative">
+  <div class="row row-top row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+
+    <div class="col hp" *ngFor="let item of trendyProducts">
+      <div class="card h-100 shadow-sm">
+        <a href="#">
+          <img src="{{ item.image }}" class="card-img-top" alt="title" />
+        </a>
+
+        <div class="label-top shadow-sm">
+          <a class="text-white" href="#">{{item.category}}</a>
+        </div>
+        <div class="card-body">
+          <div class="clearfix mb-3">
+            <span class="float-start badge rounded-pill bg-success">{{ item.price }} $</span>
+
+            <a routerLink="/details/{{item.id}}">
+              <span class="float-end"><a :href="acer.affiliateLink"
+                  class="small text-muted text-uppercase aff-link">Details</a></span>
+            </a>
+          </div>
+          <h3 class="card-title">
+            <a target="_blank">{{ item.name }} - {{ item.color }}</a>
+          </h3>
+
+          <div class="d-grid gap-2 my-4">
+
+            <a href="#" class="btn btn-warning bold-btn">Add to Cart</a>
+
+          </div>
+
+        </div>
       </div>
-    </slide>
-    <slide>
-      <img src="../../assets/images/2.jpg" alt="second slide" style="display: block; width: 100%;">
-      <div class="carousel-caption d-none d-md-block">
-        <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </slide>
-    <slide>
-      <img src="../../assets/images/3.jpg" alt="third slide" style="display: block; width: 100%;">
-      <div class="carousel-caption d-none d-md-block">
-        <h3>Third slide label</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
-    </slide>
-  </carousel>
+    </div>
+
+  </div>
+</div>
