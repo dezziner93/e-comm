@@ -23,6 +23,17 @@ export class CartPageComponent {
   constructor(private product: ProductService, private router: Router){}
 
   ngOnInit(): void {
+    this.loadDetails()
+  }
+
+  removeToCart(cartId: number | undefined){
+    cartId && this.cartData && this.product.removeToCart(cartId)
+      .subscribe((result)=>{
+        this.loadDetails()
+      })
+  }
+
+  loadDetails(){
     this.product.currentCart().subscribe((result)=>{
       this.cartData = result
       let price = 0
@@ -41,7 +52,9 @@ export class CartPageComponent {
       this.priceSummary.total += this.priceSummary.tax
       this.priceSummary.total += this.priceSummary.delivery
       this.priceSummary.total -= this.priceSummary.discount
-      console.warn(this.priceSummary)
+      if (!this.cartData.length) {
+        this.router.navigate(['/'])
+      }
     })
   }
 

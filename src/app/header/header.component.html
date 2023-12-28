@@ -5,7 +5,7 @@
             <a routerLink="/">E-COMM</a>
         </h1>
     </div>
-    <div *ngIf="menuType==='default'" class="search-main">
+    <div *ngIf="menuType!=='seller'" class="search-main">
         <input type="text" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="please search here...">
         <button (click)="submitSearch(searchInput.value)" class="btn-search">Search</button>
         <ul class="suggested-result" *ngIf="searchResult">
@@ -46,7 +46,7 @@
                 <a routerLink="my-orders">My Orders</a>
             </li>
             <li>
-                <a routerLink="cart-page">Cart({{cartItem}})</a>
+                <a [routerLink]="cartItem>0?'cart-page':null">Cart({{cartItem}})</a>
             </li>
         </ul>
         <ul *ngSwitchCase="'seller'">

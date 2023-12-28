@@ -5,10 +5,10 @@
       <div class="col-12 col-sm-8 items">
         <!--1-->
         <div *ngFor="let cart of cartData" class="cartItem row align-items-start">
-          <div class="col-3 mb-2">
+          <div class="col-2 mb-2">
             <img class="w-100" src="{{cart.image}}" alt="art image">
           </div>
-          <div class="col-5 mb-2">
+          <div class="col-3 mb-2">
             <h6 class="">{{cart.name}}</h6>
           </div>
           <div class="col-2">
@@ -16,6 +16,9 @@
           </div>
           <div class="col-2">
             <p id="cartItem1Price">{{cart.price}}</p>
+          </div>
+          <div class="col-3">
+            <button class="btn btn-danger" (click)="removeToCart(cart.id)">Remove to Cart</button>
           </div>
         </div>
         <hr>
